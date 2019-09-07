@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Card from './components/Card.js'
+import Search from './components/Search.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    data: null
+  };
+
+  updateData = (data) => {
+    this.setState({data: data})
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Search callback={this.updateData}></Search> 
+        {this.state.data !== null &&
+        <Card data={this.state.data ? this.state.data : null}></Card>
+        }
+               
+      </div>
+    )
+  }
 }
 
 export default App;
