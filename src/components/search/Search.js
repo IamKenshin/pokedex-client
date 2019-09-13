@@ -32,7 +32,9 @@ class Search extends Component{
     return (
       <div className='search'>
         <input onChange={this.updateSearchTerm()} type='text'/>
-        <button onClick={this.submitSearch}>Search</button>
+        <div className='search-btn' onClick={this.submitSearch}>
+          <img src='images/search-icon.png' alt='search'/>
+        </div>
       </div>
     )
   }

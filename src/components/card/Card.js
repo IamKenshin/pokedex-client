@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import PokemonCardDetails from '../pokemonCardDetails/PokemonCardDetails.js'
 import './card.scss'
 class Card extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.data.name}</h1>
-        <img src={this.props.data.sprites.front_default} alt=""/>
+        {this.props.data ? 
+          <PokemonCardDetails data={this.props.data}></PokemonCardDetails> : <h1>No Results!</h1>}
       </div>
     )
   }
