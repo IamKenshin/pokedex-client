@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './search.scss'
 
 class Search extends Component{
   constructor(props) {
@@ -29,7 +30,7 @@ class Search extends Component{
 
   render() {
     return (
-      <div>
+      <div className='search'>
         <input onChange={this.updateSearchTerm()} type='text'/>
         <button onClick={this.submitSearch}>Search</button>
       </div>

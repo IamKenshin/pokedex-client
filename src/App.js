@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './App.css';
-import Card from './components/Card.js'
-import Search from './components/Search.js'
+import './App.scss';
+import Card from './components/card/Card.js'
+import Search from './components/search/Search.js'
 
 class App extends Component {
   state = {
@@ -14,11 +14,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Search callback={this.updateData}></Search> 
-        {this.state.data !== null &&
-        <Card data={this.state.data ? this.state.data : null}></Card>
-        }
+      <div className="app">
+        <Search callback={this.updateData}></Search>
+
+        <div className="cardSection">
+          {this.state.data !== null &&
+            <Card data={this.state.data ? this.state.data : null}></Card>
+          }  
+        </div> 
                
       </div>
     )

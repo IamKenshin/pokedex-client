@@ -1,0 +1,19 @@
+.app {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  height: 50vh;
+  background-color: red;
+
+  .cardSection {
+    height: 50%;
+    width: auto;
+    margin: 5px 5px auto;
+    background-color: whitesmoke;
+    box-shadow: inset 0 0 10px gray;
+  }
+}
+
