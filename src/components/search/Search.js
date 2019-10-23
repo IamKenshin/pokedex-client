@@ -10,7 +10,7 @@ class Search extends Component{
   }
 
   callBackendApi = async (val) => {
-    const response = await fetch('/' + val);
+    const response = await fetch('/' + this.props.type + '/' + val);
     const body = await response.json();
 
     if(response.status !== 200) {
@@ -28,10 +28,14 @@ class Search extends Component{
       .then(res => this.props.callback(res.response))
   }
 
+  onEnterPress = (evt) => {
+    this.submitSearch();
+  }
+
   render() {
     return (
       <div className='search'>
-        <input onChange={this.updateSearchTerm()} type='text'/>
+        <input onChange={this.updateSearchTerm()} onKeyPress={(e) => { if(e.key === 'Enter') this.onEnterPress(e)}} type='text'/>
         <div className='search-btn' onClick={this.submitSearch}>
           <img src='images/search-icon.png' alt='search'/>
         </div>

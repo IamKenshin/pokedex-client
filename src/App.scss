@@ -17,5 +17,11 @@
     background-color: whitesmoke;
     box-shadow: inset 0 0 10px gray;
   }
+
+  .searchTypeSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
